@@ -1,6 +1,5 @@
 # -*- encoding=utf-8 -*-
 ###
-# ping监控
 # 1) support mutil group
 # 2) install support extra option string
 ###
