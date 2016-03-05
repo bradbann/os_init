@@ -45,9 +45,6 @@ def main():
         parser.add_option("-g", "--groups",  
                           action="store", dest="groups", default=None,  
                           help="which groups to use,when no set,use the field 'groups' in config file as default", metavar="GROUPS")
-        parser.add_option("-d", "--debug",  
-                          action="store_true", dest="debug", default=False,  
-                          help="debug model")
         
         (options, args) = parser.parse_args()
         
@@ -109,7 +106,7 @@ def main():
                     #fullpath = os.path.abspath(script)
                     (dirname, scriptname) = os.path.split(fullpath)
                     cmdstr = "cd %s && %s %s %s" %(dirname, exector, scriptname, params)
-                    (stdo, stde, retcode) = cmd.docmd_ex(cmdstr, timeout=timeout, debug=options.debug)
+                    (stdo, stde, retcode) = cmd.docmd_ex(cmdstr, timeout=timeout)
                     logconf = [
                         {"comment": comment},
                         {"cmdstr": cmdstr},
